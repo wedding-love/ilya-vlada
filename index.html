@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -344,13 +343,8 @@
             color: #ffffff;
             transform: translateY(-2px);
         }
-        .map-container {
-            margin-top: 1.5rem;
-            border-radius: 20px;
-            overflow: hidden;
-        }
 
-        /* Тайминг */
+        /* Тайминг — красивое оформление, абзацы по линиям */
         .timeline-block {
             background: #ffffff;
             padding: 4rem 1.5rem;
@@ -360,10 +354,10 @@
             text-align: center;
             font-size: clamp(1.8rem, 5vw, 2.5rem);
             font-weight: 500;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
         .timeline {
-            max-width: 600px;
+            max-width: 680px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -373,28 +367,30 @@
             display: flex;
             align-items: baseline;
             justify-content: space-between;
-            padding: 1rem 0;
-            border-bottom: 1px solid #eeeeee;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #eaeaea;
         }
         .timeline-item:last-child {
             border-bottom: none;
         }
         .timeline-time {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 600;
             letter-spacing: 0.02em;
             width: 100px;
+            color: #1a1a1a;
         }
         .timeline-event {
-            font-size: 1.1rem;
-            color: #444;
+            font-size: 1.05rem;
+            color: #3a3a3a;
             text-align: right;
             flex: 1;
+            line-height: 1.5;
         }
         @media (max-width: 640px) {
-            .timeline-item { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
-            .timeline-time { width: auto; }
-            .timeline-event { text-align: left; }
+            .timeline-item { flex-direction: column; align-items: flex-start; gap: 0.3rem; padding: 1rem 0; }
+            .timeline-time { width: auto; font-size: 1.3rem; }
+            .timeline-event { text-align: left; font-size: 0.95rem; }
         }
 
         /* Дресс-код */
@@ -412,50 +408,54 @@
         .dresscode-description {
             font-size: 1rem;
             max-width: 700px;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto;
         }
 
-        /* Пожелания и подарки - красивый отдельный блок */
-        .gift-wishes-block {
+        /* ПОЖЕЛАНИЯ — белый фон, текст по ширине, красивые абзацы */
+        .wishes-block {
             background: #ffffff;
             padding: 4rem 1.5rem;
             border-bottom: 1px solid #eeeeee;
         }
-        .gift-wishes-container {
-            max-width: 800px;
+        .wishes-container {
+            max-width: 960px;
             margin: 0 auto;
-            text-align: center;
-            background: #fefcf8;
-            border-radius: 32px;
-            padding: 2.5rem 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            text-align: left;
+            background: #ffffff;
+            border-radius: 0;
+            padding: 0;
+            box-shadow: none;
         }
-        .gift-wishes-title {
+        .wishes-title {
+            text-align: center;
             font-size: clamp(1.8rem, 5vw, 2.5rem);
             font-weight: 500;
             margin-bottom: 0.5rem;
         }
-        .gift-wishes-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-top: 1.2rem;
+        .wishes-text {
+            font-size: 1.08rem;
+            line-height: 1.75;
+            margin-top: 1.4rem;
+            text-align: justify;
+            width: 100%;
         }
-        .gift-wishes-text:first-of-type {
-            margin-top: 1.5rem;
+        .wishes-text:first-of-type {
+            margin-top: 2rem;
         }
-        .gift-note {
-            margin-top: 1.5rem;
+        .wishes-note {
+            margin-top: 1.8rem;
             font-style: normal;
             color: #2c2c2c;
+            text-align: justify;
         }
 
-        /* Форма */
+        /* Форма — убраны вопросы про спутников и предпочтения по блюду */
         .presence-block {
             background: #ffffff;
             padding: 4rem 1.5rem;
             border-bottom: 1px solid #eeeeee;
         }
-        .presence-container { max-width: 800px; margin: 0 auto; text-align: center; }
+        .presence-container { max-width: 700px; margin: 0 auto; text-align: center; }
         .presence-title {
             font-size: clamp(1.8rem, 5vw, 2.5rem);
             font-weight: 500;
@@ -525,7 +525,7 @@
             display: none;
         }
 
-        /* Контакты — без координатора и без лишнего текста */
+        /* Контакты — жених и невеста всегда на одной строке (flex nowrap) */
         .contacts-block {
             background: #ffffff;
             padding: clamp(3rem, 8vw, 5rem) 1.5rem;
@@ -549,14 +549,15 @@
             display: flex;
             justify-content: center;
             gap: 1.5rem;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            align-items: stretch;
         }
         .contact-btn {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-width: 180px;
+            min-width: 190px;
             padding: 1.2rem 1rem;
             border: 0.5px solid #cccccc;
             text-decoration: none;
@@ -584,10 +585,16 @@
             gap: 8px;
         }
         .btn-phone { font-size: 0.85rem; margin-top: 2px; }
+
         @media (max-width: 640px) {
-            .couple-buttons { gap: 1rem; }
-            .contact-btn { min-width: 150px; }
-            .btn-name { font-size: 1.1rem; }
+            .couple-buttons {
+                gap: 1rem;
+                flex-wrap: nowrap;
+                justify-content: center;
+            }
+            .contact-btn { min-width: 160px; padding: 1rem 0.5rem; }
+            .btn-name { font-size: 1.1rem; flex-direction: column; gap: 4px; }
+            .btn-phone { font-size: 0.75rem; }
         }
 
         footer {
@@ -617,7 +624,7 @@
     <div class="scroll-down" id="scrollArrow">
         <span>ЛИСТАЙТЕ ВНИЗ</span>
         <svg class="arrow-icon bounce-animation" viewBox="0 0 24 24">
-            <path d="M12 5 L12 19 M12 19 L8 15 M12 19 L16 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 5 L12 19 M12 19 L8 15 M12 19 L16 15" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
     </div>
 </section>
@@ -652,7 +659,7 @@
     </div>
 </section>
 
-<!-- Локация: карта оставлена, значок с ссылкой убран (кнопка "Построить маршрут" без иконок) -->
+<!-- Локация -->
 <section class="location-block fade-up">
     <div class="location-container">
         <div class="location-card">
@@ -668,22 +675,21 @@
             <a href="https://yandex.by/maps/org/esperanto/27675898569/?ll=23.833712%2C53.679066&mode=search&text=Винный%20бар%20Эсперанто%20Гродно&z=16" target="_blank" rel="noopener" class="btn-map">
                 ПОСТРОИТЬ МАРШРУТ
             </a>
-           
         </div>
     </div>
 </section>
 
-<!-- Тайминг -->
+<!-- Тайминг с красивым оформлением и абзацами по линиям -->
 <section class="timeline-block fade-up">
     <h2 class="timeline-title">ТАЙМИНГ</h2>
     <div class="timeline">
         <div class="timeline-item">
             <div class="timeline-time">16:00</div>
-            <div class="timeline-event">Торжественная регистрация брака (г. Гродно, ул. Соколовского, 24, ЗАГС Октябрьского района)</div>
+            <div class="timeline-event">Торжественная регистрация брака<br><span style="font-size:0.9rem; color:#666;">г. Гродно, ул. Соколовского, 24 (ЗАГС Октябрьского района)</span></div>
         </div>
         <div class="timeline-item">
             <div class="timeline-time">16:45</div>
-            <div class="timeline-event">Фуршет и фотосессия (Винный бар Эсперанто)</div>
+            <div class="timeline-event">Фуршет и фотосессия<br><span style="font-size:0.9rem; color:#666;">Винный бар Эсперанто</span></div>
         </div>
         <div class="timeline-item">
             <div class="timeline-time">17:30</div>
@@ -691,7 +697,7 @@
         </div>
         <div class="timeline-item">
             <div class="timeline-time">00:00</div>
-            <div class="timeline-event">Окончание праздничного дня. Даже такой день может подойти к концу...</div>
+            <div class="timeline-event">Окончание праздничного дня.<br>Даже такой день может подойти к концу...</div>
         </div>
     </div>
 </section>
@@ -702,32 +708,27 @@
         <h2 class="dresscode-title">ДРЕСС-КОД</h2>
         <div class="small-divider"></div>
         <p class="dresscode-description">
-            Мы не ограничиваем вас строгими правилами. Главное — чтобы вам было комфортно и радостно! 
+            Мы не ограничиваем вас строгими правилами. Главное — чтобы вам было комфортно и радостно!<br>
             Приветствуется элегантность и уют. Пусть ваш образ отражает ваше настроение и праздник.
         </p>
     </div>
 </section>
 
-<!-- ОТДЕЛЬНЫЙ КРАСИВЫЙ БЛОК: ПОДАРКИ И ПОЖЕЛАНИЯ (весь текст как вы просили) -->
-<section class="gift-wishes-block fade-up">
-    <div class="gift-wishes-container">
-        <h2 class="gift-wishes-title">ПОДАРКИ И ПОЖЕЛАНИЯ</h2>
+<!-- ПОЖЕЛАНИЯ (название "Пожелания", белый фон, выравнивание по ширине) -->
+<section class="wishes-block fade-up">
+    <div class="wishes-container">
+        <h2 class="wishes-title">ПОЖЕЛАНИЯ</h2>
         <div class="small-divider"></div>
-        <p class="gift-wishes-text">
-            Ваше присутствие в день нашей свадьбы — самый значимый подарок для нас!
+        <p class="wishes-text">
+            Ваше присутствие в день нашей свадьбы — самый значимый подарок для нас! Мы понимаем, что дарить цветы на свадьбу — это традиция, но мы не сможем насладиться их красотой в полной мере. Будем рады любой другой альтернативе (вино или в денежном эквиваленте).
         </p>
-        <p class="gift-wishes-text">
-            Мы понимаем, что дарить цветы на свадьбу — это традиция, но мы не сможем насладиться их красотой в полной мере...<br>
-            Будем рады любой другой альтернативе (вино или в денежном эквиваленте).
-        </p>
-        <p class="gift-wishes-text gift-note">
-            Будем благодарны, если вы воздержитесь от криков "Горько" на празднике, ведь поцелуй — это знак выражения чувств,<br>
-            он не может быть по заказу.
+        <p class="wishes-text wishes-note">
+            Будем благодарны, если вы воздержитесь от криков "Горько" на празднике, ведь поцелуй — это знак выражения чувств, он не может быть по заказу.
         </p>
     </div>
 </section>
 
-<!-- Форма присутствия -->
+<!-- Форма присутствия (убраны вопросы "Будет ли с вами кто-то?" и "Предпочтения по блюду") -->
 <section class="presence-block fade-up">
     <div class="presence-container">
         <h2 class="presence-title">ПРИСУТСТВИЕ</h2>
@@ -746,20 +747,6 @@
                     <label><input type="radio" name="attendance" value="Да, приду" required> Да, приду</label>
                     <label><input type="radio" name="attendance" value="Нет, не смогу"> Нет, не смогу</label>
                     <label><input type="radio" name="attendance" value="Возможно, сообщу позже"> Возможно, сообщу позже</label>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label for="companions">Будет ли с вами кто-то еще? (если да, укажите имена)</label>
-                <input type="text" id="companions" name="companions" placeholder="Например: Сергей, Ольга">
-            </div>
-
-            <div class="form-group">
-                <label>Предпочтения по основному блюду *</label>
-                <div class="radio-group">
-                    <label><input type="radio" name="meal_preference" value="Мясо" required> Мясо</label>
-                    <label><input type="radio" name="meal_preference" value="Рыба"> Рыба</label>
-                    <label><input type="radio" name="meal_preference" value="Без разницы"> Без разницы</label>
                 </div>
             </div>
             
@@ -786,7 +773,7 @@
     </div>
 </section>
 
-<!-- Контакты: только жених и невеста, без текста "в день свадьбы мы будем заняты" -->
+<!-- Контакты: жених и невеста всегда на одной строке -->
 <section class="contacts-block fade-up">
     <div class="contacts-container">
         <h2 class="contacts-title">КОНТАКТЫ</h2>
@@ -813,10 +800,9 @@
 
 <script>
     (function() {
-        // ДАТА СВАДЬБЫ: 29 АВГУСТА 2026, 16:00
         const targetDate = new Date(2026, 7, 29, 16, 0, 0);
         
-        // Календарь на август 2026
+        // Календарь
         const year = 2026, month = 7, specialDay = 29;
         const firstDay = new Date(year, month, 1);
         let firstWeekday = firstDay.getDay();
@@ -851,7 +837,6 @@
             });
         }
 
-        // Таймер с секундами
         function updateCountdown() {
             const now = new Date();
             const diff = targetDate - now;
@@ -874,14 +859,12 @@
         updateCountdown();
         setInterval(updateCountdown, 1000);
 
-        // Скролл
         const scrollArrow = document.getElementById('scrollArrow');
         const guestsBlock = document.getElementById('guests-section');
         if (scrollArrow && guestsBlock) {
             scrollArrow.addEventListener('click', () => guestsBlock.scrollIntoView({ behavior: 'smooth', block: 'start' }));
         }
 
-        // Анимация
         const animated = document.querySelectorAll('.fade-up');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -893,7 +876,6 @@
         }, { threshold: 0.15 });
         animated.forEach(el => observer.observe(el));
 
-        // Форма
         const form = document.getElementById('presenceForm');
         const soonMessage = document.getElementById('soonMessage');
         if (form) {
