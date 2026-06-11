@@ -27,7 +27,7 @@
             width: 100%;
         }
 
-        /* Hero — изменен цвет текста на черный, убран полупрозрачный оверлей */
+        /* Hero — текст ЧЕРНЫЙ, без фона и подложек */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -44,7 +44,7 @@
             padding-top: 80px;
         }
 
-        /* Убираем затемнение, чтобы текст был черным на светлом фоне */
+        /* Полностью убираем все оверлеи и подложки */
         .hero::before {
             display: none;
         }
@@ -55,29 +55,12 @@
         .hero .hero-place {
             position: relative;
             z-index: 2;
-            color: #000000; /* Черный цвет текста */
-            text-shadow: none; /* Убираем тень для четкости */
-        }
-
-        /* Для читаемости на любом фоне — легкая полупрозрачная подложка под текстом */
-        .hero .names, 
-        .hero .hero-sub,
-        .hero .hero-date,
-        .hero .hero-place {
-            background: rgba(255, 255, 255, 0.55);
-            display: inline-block;
-            padding: 0.2rem 1rem;
-            backdrop-filter: blur(3px);
-            border-radius: 40px;
-        }
-
-        @media (max-width: 640px) {
-            .hero .names, 
-            .hero .hero-sub,
-            .hero .hero-date,
-            .hero .hero-place {
-                padding: 0.2rem 0.8rem;
-            }
+            color: #000000; /* Чистый черный цвет */
+            background: transparent; /* Убираем белую подложку */
+            backdrop-filter: none; /* Убираем размытие */
+            padding: 0; /* Убираем внутренние отступы */
+            border-radius: 0;
+            text-shadow: none;
         }
 
         .names {
@@ -113,7 +96,7 @@
 
         @media (max-width: 768px) {
             .hero { padding-top: 60px; }
-            .names { font-size: 2.2rem; padding: 0 20px; }
+            .names { font-size: 2.2rem; }
             .hero-sub { font-size: 0.9rem; }
             .hero-date { font-size: 1.2rem; }
             .hero-place { font-size: 0.9rem; }
@@ -137,7 +120,7 @@
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #000000; /* черный */
+            color: #000000;
             background: rgba(255,255,240,0.6);
             padding: 2px 8px;
             border-radius: 30px;
@@ -159,7 +142,7 @@
             animation: bounceSoft 2s infinite ease-in-out;
         }
 
-        /* Общие */
+        /* Общие разделители и прочие стили (без изменений) */
         .small-divider {
             width: 60px;
             height: 1px;
@@ -180,19 +163,16 @@
         .small-divider::before { left: -10px; }
         .small-divider::after { right: -10px; }
 
-        /* Гости */
         .guests-block {
             background: #ffffff;
             padding: 4rem 1.5rem;
             border-bottom: 1px solid #eeeeee;
         }
-
         .guest-content {
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
-
         .greeting-title {
             font-size: clamp(2rem, 6vw, 3.2rem);
             font-weight: 500;
@@ -200,7 +180,6 @@
             letter-spacing: -0.01em;
             margin-bottom: 1rem;
         }
-
         .greeting-text {
             font-size: 1rem;
             line-height: 1.7;
@@ -208,7 +187,6 @@
             max-width: 680px;
             margin: 0 auto 2rem auto;
         }
-
         .calendar-wrapper {
             background: #ffffff;
             border: 1px solid #dddddd;
@@ -216,13 +194,11 @@
             padding: 1.8rem 1.2rem 2rem;
             margin-top: 1rem;
         }
-
         .month-year {
             font-size: 1.8rem;
             font-weight: 500;
             color: #111111;
         }
-
         .weekdays {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
@@ -236,14 +212,12 @@
             padding: 0.6rem 0;
             border-radius: 40px;
         }
-
         .calendar-days {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 8px;
             text-align: center;
         }
-
         .calendar-day {
             aspect-ratio: 1 / 1;
             display: flex;
@@ -255,12 +229,10 @@
             background: #ffffff;
             border-radius: 50%;
         }
-
         .calendar-day.empty {
             background: transparent;
             color: #dddddd;
         }
-
         .heart-svg {
             width: 42px;
             height: 42px;
@@ -274,8 +246,6 @@
             .weekdays, .calendar-days { gap: 4px; }
             .calendar-day { font-size: 0.75rem; }
         }
-
-        /* Счётчик */
         .countdown-wrapper {
             margin-top: 2rem;
             text-align: center;
@@ -316,8 +286,6 @@
             .countdown-item { min-width: 65px; padding: 0.4rem 0.8rem; }
             .countdown-item span:first-child { font-size: 1.4rem; }
         }
-
-        /* Локация */
         .location-block {
             background: #ffffff;
             padding: 4rem 1.5rem;
@@ -379,8 +347,6 @@
             color: #ffffff;
             transform: translateY(-2px);
         }
-
-        /* Тайминг */
         .timeline-block {
             background: #ffffff;
             padding: 4rem 1.5rem;
@@ -428,8 +394,6 @@
             .timeline-time { width: auto; font-size: 1.3rem; }
             .timeline-event { text-align: left; font-size: 0.95rem; }
         }
-
-        /* Дресс-код */
         .dresscode-block {
             background: #ffffff;
             padding: 4rem 1.5rem;
@@ -446,8 +410,6 @@
             max-width: 700px;
             margin: 0 auto;
         }
-
-        /* ПОЖЕЛАНИЯ */
         .wishes-block {
             background: #ffffff;
             padding: 4rem 1.5rem;
@@ -484,8 +446,6 @@
             color: #2c2c2c;
             text-align: justify;
         }
-
-        /* Форма */
         .presence-block {
             background: #ffffff;
             padding: 4rem 1.5rem;
@@ -560,8 +520,6 @@
             font-weight: 500;
             display: none;
         }
-
-        /* Контакты */
         .contacts-block {
             background: #ffffff;
             padding: clamp(3rem, 8vw, 5rem) 1.5rem;
@@ -621,7 +579,6 @@
             gap: 8px;
         }
         .btn-phone { font-size: 0.85rem; margin-top: 2px; }
-
         @media (max-width: 640px) {
             .couple-buttons {
                 gap: 1rem;
@@ -632,7 +589,6 @@
             .btn-name { font-size: 1.1rem; flex-direction: column; gap: 4px; }
             .btn-phone { font-size: 0.75rem; }
         }
-
         footer {
             background: #ffffff;
             text-align: center;
@@ -640,7 +596,6 @@
             font-size: 0.75rem;
             border-top: 1px solid #eeeeee;
         }
-
         .fade-up {
             opacity: 0;
             transform: translateY(30px);
@@ -684,7 +639,6 @@
             </div>
             <div class="calendar-days" id="calendarGrid"></div>
         </div>
-
         <div class="countdown-wrapper">
             <div class="countdown-title">До нашей свадьбы осталось</div>
             <div class="countdown" id="countdown">
@@ -778,7 +732,6 @@
                 <label for="fullname">Фамилия и имя *</label>
                 <input type="text" id="fullname" name="fullname" required placeholder="Петрова Анна">
             </div>
-            
             <div class="form-group">
                 <label>Сможете ли вы присутствовать? *</label>
                 <div class="radio-group">
@@ -787,7 +740,6 @@
                     <label><input type="radio" name="attendance" value="Возможно, сообщу позже"> Возможно, сообщу позже</label>
                 </div>
             </div>
-            
             <div class="form-group">
                 <label>Предпочтения по напиткам (можно выбрать несколько)</label>
                 <div class="checkbox-group">
@@ -799,12 +751,10 @@
                     <label><input type="checkbox" name="drinks" value="Безалкогольные"> Безалкогольные</label>
                 </div>
             </div>
-
             <div class="form-group">
                 <label for="message">Ваши пожелания или комментарии (аллергии, особенности)</label>
                 <textarea id="message" name="message" rows="2" placeholder="Напишите, если важно"></textarea>
             </div>
-            
             <button type="submit" class="submit-btn">Отправить</button>
         </form>
         <div class="soon-message" id="soonMessage">Спасибо! Мы получили ваши ответы. До скорой встречи!</div>
@@ -840,7 +790,6 @@
     (function() {
         const targetDate = new Date(2026, 7, 29, 16, 0, 0);
         
-        // Календарь
         const year = 2026, month = 7, specialDay = 29;
         const firstDay = new Date(year, month, 1);
         let firstWeekday = firstDay.getDay();
