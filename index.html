@@ -28,6 +28,7 @@
             width: 100%;
         }
 
+        /* Hero — текст ЧЕРНЫЙ, без фона, поднят выше */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -71,9 +72,10 @@
             text-transform: uppercase;
         }
 
+        /* Увеличенный жирный шрифт для "ПРИГЛАШАЕМ НА НАШУ СВАДЬБУ" */
         .hero-sub {
             font-size: 1.2rem;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.2rem;
             text-transform: uppercase;
             margin-top: 0.2rem;
@@ -86,9 +88,10 @@
             margin-top: 1rem;
         }
 
+        /* Увеличенная жирная дата */
         .hero-date {
             font-size: 1.6rem;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.1em;
             margin-top: 0.5rem;
         }
@@ -358,8 +361,9 @@
         .timeline-title {
             text-align: center;
             font-size: clamp(1.8rem, 5vw, 2.5rem);
-            font-weight: 500;
+            font-weight: 700; /* Жирный шрифт для заголовка Тайминг */
             margin-bottom: 2.5rem;
+            letter-spacing: 0.05em;
         }
         .timeline {
             max-width: 680px;
@@ -380,13 +384,14 @@
         }
         .timeline-time {
             font-size: 1.5rem;
-            font-weight: 600;
+            font-weight: 700; /* Жирное время */
             letter-spacing: 0.02em;
             width: 100px;
             color: #1a1a1a;
         }
         .timeline-event {
             font-size: 1.05rem;
+            font-weight: 500;
             color: #3a3a3a;
             text-align: right;
             flex: 1;
@@ -394,6 +399,7 @@
         }
         .timeline-address {
             font-size: 0.85rem;
+            font-weight: 400;
             color: #666;
             display: inline-block;
             margin-top: 4px;
@@ -633,6 +639,7 @@
     </div>
 </section>
 
+<!-- Календарь и таймер -->
 <section class="guests-block fade-up" id="guests-section">
     <div class="guest-content">
         <h1 class="greeting-title">ДОРОГИЕ ГОСТИ!</h1>
@@ -661,6 +668,7 @@
     </div>
 </section>
 
+<!-- Локация: адрес и фото -->
 <section class="location-block fade-up">
     <div class="location-container">
         <div class="location-card">
@@ -680,6 +688,7 @@
     </div>
 </section>
 
+<!-- Тайминг (жирные заголовки) -->
 <section class="timeline-block fade-up">
     <h2 class="timeline-title">ТАЙМИНГ</h2>
     <div class="timeline">
@@ -708,6 +717,7 @@
     </div>
 </section>
 
+<!-- Дресс-код -->
 <section class="dresscode-block fade-up">
     <div class="dresscode-container">
         <h2 class="dresscode-title">ДРЕСС-КОД</h2>
@@ -719,12 +729,13 @@
     </div>
 </section>
 
+<!-- ПОЖЕЛАНИЯ (обновлённый текст с вином и запиской + оставляем про "Горько") -->
 <section class="wishes-block fade-up">
     <div class="wishes-container">
         <h2 class="wishes-title">ПОЖЕЛАНИЯ</h2>
         <div class="small-divider"></div>
         <p class="wishes-text">
-            Ваше присутствие в день нашей свадьбы — самый значимый подарок для нас! Мы понимаем, что дарить цветы на свадьбу — это традиция, но мы не сможем насладиться их красотой в полной мере. Будем рады любой другой альтернативе (вино или в денежном эквиваленте).
+            Ваше присутствие в день нашей свадьбы — самый значимый подарок для нас! Мы понимаем, что дарить цветы на свадьбу — это традиция, но мы не сможем насладиться их красотой в полной мере. Предлагаем вместо букета подарить бутылку вина с небольшой запиской и датой, по какому поводу её стоит открыть. Нам нравится мысль, что спустя годы мы сможем разделить эти моменты, вспоминая день нашей свадьбы и ваши тёплые слова.
         </p>
         <p class="wishes-text wishes-note">
             Будем благодарны, если вы воздержитесь от криков "Горько" на празднике, ведь поцелуй — это знак выражения чувств, он не может быть по заказу.
@@ -732,7 +743,7 @@
     </div>
 </section>
 
-<!-- Форма присутствия (анкета) с новым вопросом про место присоединения -->
+<!-- Форма присутствия (анкета) -->
 <section class="presence-block fade-up">
     <div class="presence-container">
         <h2 class="presence-title">ПРИСУТСТВИЕ</h2>
@@ -753,7 +764,6 @@
                 </div>
             </div>
             
-            <!-- НОВЫЙ ВОПРОС: Откуда присоединитесь? (вертикально в столбик) -->
             <div class="form-group">
                 <label>Откуда вы присоединитесь к нашему празднику?</label>
                 <div class="join-group">
@@ -784,6 +794,7 @@
     </div>
 </section>
 
+<!-- Контакты: жених и невеста -->
 <section class="contacts-block fade-up">
     <div class="contacts-container">
         <h2 class="contacts-title">КОНТАКТЫ</h2>
