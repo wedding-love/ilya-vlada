@@ -27,7 +27,7 @@
             width: 100%;
         }
 
-        /* Hero */
+        /* Hero — чёрный шрифт, без затемнения, фон jpg */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -37,30 +37,20 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            background-image: url('фон.png');
+            background-image: url('фон.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             padding-top: 80px;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.35);
-            z-index: 1;
-        }
-
+        /* Убираем затемнение, шрифт чёрный */
         .hero .names,
         .hero .hero-sub {
             position: relative;
             z-index: 2;
-            color: #ffffff;
-            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
+            color: #000000;
+            text-shadow: none;
         }
 
         .names {
@@ -86,6 +76,7 @@
             .hero-sub { font-size: 0.9rem; }
         }
 
+        /* Стрелка скролла оставляем белой для контраста на случай тёмных участков фона — но её видно хорошо */
         .scroll-down {
             position: absolute;
             bottom: 2rem;
@@ -104,13 +95,16 @@
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #ffffff;
+            color: #000000;
+            background: rgba(255,255,240,0.5);
+            padding: 0 6px;
+            border-radius: 20px;
         }
 
         .arrow-icon {
             width: 30px;
             height: 30px;
-            stroke: #ffffff;
+            stroke: #000000;
             stroke-width: 1.6;
             fill: none;
         }
@@ -620,11 +614,11 @@
 
 <section class="hero" id="hero-section">
     <div class="names">ИЛЬЯ & ВЛАДА</div>
-    <div class="hero-sub">ПРИГЛАШАЮТ НА СВАДЬБУ</div>
+    <div class="hero-sub">ПРИГЛАШАЕМ НА НАШУ СВАДЬБУ</div>   <!-- Изменён текст -->
     <div class="scroll-down" id="scrollArrow">
         <span>ЛИСТАЙТЕ ВНИЗ</span>
         <svg class="arrow-icon bounce-animation" viewBox="0 0 24 24">
-            <path d="M12 5 L12 19 M12 19 L8 15 M12 19 L16 15" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 5 L12 19 M12 19 L8 15 M12 19 L16 15" stroke="#000000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
     </div>
 </section>
@@ -659,7 +653,7 @@
     </div>
 </section>
 
-<!-- Локация -->
+<!-- Локация с изображением локация.jpg -->
 <section class="location-block fade-up">
     <div class="location-container">
         <div class="location-card">
@@ -670,7 +664,7 @@
                 г. Гродно, ул. Кирова, 5
             </div>
             <div class="location-image">
-                <img src="локация.png" alt="Винный бар Эсперанто интерьер">
+                <img src="локация.jpg" alt="Винный бар Эсперанто интерьер">
             </div>
             <a href="https://yandex.by/maps/org/esperanto/27675898569/?ll=23.833712%2C53.679066&mode=search&text=Винный%20бар%20Эсперанто%20Гродно&z=16" target="_blank" rel="noopener" class="btn-map">
                 ПОСТРОИТЬ МАРШРУТ
@@ -679,7 +673,7 @@
     </div>
 </section>
 
-<!-- Тайминг с красивым оформлением и абзацами по линиям -->
+<!-- Тайминг -->
 <section class="timeline-block fade-up">
     <h2 class="timeline-title">ТАЙМИНГ</h2>
     <div class="timeline">
@@ -714,7 +708,7 @@
     </div>
 </section>
 
-<!-- ПОЖЕЛАНИЯ (название "Пожелания", белый фон, выравнивание по ширине) -->
+<!-- ПОЖЕЛАНИЯ -->
 <section class="wishes-block fade-up">
     <div class="wishes-container">
         <h2 class="wishes-title">ПОЖЕЛАНИЯ</h2>
@@ -728,7 +722,7 @@
     </div>
 </section>
 
-<!-- Форма присутствия (убраны вопросы "Будет ли с вами кто-то?" и "Предпочтения по блюду") -->
+<!-- Форма присутствия -->
 <section class="presence-block fade-up">
     <div class="presence-container">
         <h2 class="presence-title">ПРИСУТСТВИЕ</h2>
@@ -773,7 +767,7 @@
     </div>
 </section>
 
-<!-- Контакты: жених и невеста всегда на одной строке -->
+<!-- Контакты -->
 <section class="contacts-block fade-up">
     <div class="contacts-container">
         <h2 class="contacts-title">КОНТАКТЫ</h2>
