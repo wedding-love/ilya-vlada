@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -63,7 +64,7 @@
             text-shadow: none;
         }
 
-        /* Уменьшенные размеры текста */
+        /* Имена остаются элегантными */
         .names {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(1.8rem, 6vw, 3.5rem);
@@ -73,12 +74,13 @@
             text-transform: uppercase;
         }
 
+        /* УВЕЛИЧЕННЫЙ ШРИФТ ДЛЯ "ПРИГЛАШАЕМ НА НАШУ СВАДЬБУ" */
         .hero-sub {
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.25rem;
+            font-size: 1.2rem;      /* Был 0.7rem — значительно увеличили */
+            font-weight: 600;
+            letter-spacing: 0.2rem;
             text-transform: uppercase;
-            margin-top: 0;
+            margin-top: 0.2rem;
         }
 
         .hero-place {
@@ -88,19 +90,24 @@
             margin-top: 1rem;
         }
 
+        /* УВЕЛИЧЕННАЯ ДАТА */
         .hero-date {
-            font-size: 1.1rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            margin-top: 0.3rem;
+            font-size: 1.6rem;      /* Был 1.1rem — сделали заметно крупнее */
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
         }
 
         @media (max-width: 768px) {
             .hero { padding-top: 20px; }
             .names { font-size: 2rem; }
-            .hero-sub { font-size: 0.65rem; letter-spacing: 0.2rem; }
+            .hero-sub { font-size: 1rem; letter-spacing: 0.18rem; }  /* Адаптивно */
             .hero-place { font-size: 0.8rem; margin-top: 0.8rem; }
-            .hero-date { font-size: 1rem; }
+            .hero-date { font-size: 1.4rem; }
+        }
+        @media (max-width: 480px) {
+            .hero-sub { font-size: 0.85rem; letter-spacing: 0.12rem; }
+            .hero-date { font-size: 1.2rem; }
         }
 
         /* Стрелка без фона и обводки */
@@ -614,8 +621,10 @@
 
 <section class="hero" id="hero-section">
     <div class="names">ИЛЬЯ & ВЛАДА</div>
+    <!-- Увеличенный шрифт для приглашения -->
     <div class="hero-sub">ПРИГЛАШАЕМ НА НАШУ СВАДЬБУ</div>
     <div class="hero-place">ВИННЫЙ БАР ЭСПЕРАНТО</div>
+    <!-- Увеличенная дата -->
     <div class="hero-date">29.08.26</div>
     <div class="scroll-down" id="scrollArrow">
         <span>ЛИСТАЙТЕ ВНИЗ</span>
