@@ -28,7 +28,6 @@
             width: 100%;
         }
 
-        /* Hero — текст ЧЕРНЫЙ, без фона, поднят выше */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -386,7 +385,6 @@
             width: 100px;
             color: #1a1a1a;
         }
-        /* ОСНОВНОЕ ИЗМЕНЕНИЕ: делаем название события жирным */
         .timeline-event {
             font-size: 1.05rem;
             color: #3a3a3a;
@@ -394,17 +392,12 @@
             flex: 1;
             line-height: 1.5;
         }
-        .timeline-event strong {
-            font-weight: 700;
-            color: #111111;
-        }
         .timeline-address {
             font-size: 0.85rem;
             color: #666;
             display: inline-block;
             margin-top: 4px;
             line-height: 1.4;
-            font-weight: normal;
         }
         @media (max-width: 640px) {
             .timeline-item { flex-direction: column; align-items: flex-start; gap: 0.3rem; padding: 1rem 0; }
@@ -506,13 +499,13 @@
             outline: none;
             border-color: #111;
         }
-        .radio-group, .checkbox-group {
+        .radio-group, .checkbox-group, .join-group {
             display: flex;
             flex-direction: column;
             gap: 0.8rem;
             align-items: flex-start;
         }
-        .radio-group label, .checkbox-group label {
+        .radio-group label, .checkbox-group label, .join-group label {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -640,7 +633,6 @@
     </div>
 </section>
 
-<!-- Календарь и таймер -->
 <section class="guests-block fade-up" id="guests-section">
     <div class="guest-content">
         <h1 class="greeting-title">ДОРОГИЕ ГОСТИ!</h1>
@@ -669,7 +661,6 @@
     </div>
 </section>
 
-<!-- Локация: адрес и фото локация.jpg -->
 <section class="location-block fade-up">
     <div class="location-container">
         <div class="location-card">
@@ -689,41 +680,34 @@
     </div>
 </section>
 
-<!-- Тайминг (все названия событий — жирным шрифтом) -->
 <section class="timeline-block fade-up">
     <h2 class="timeline-title">ТАЙМИНГ</h2>
     <div class="timeline">
         <div class="timeline-item">
             <div class="timeline-time">16:00</div>
             <div class="timeline-event">
-                <strong>Торжественная регистрация брака</strong>
+                Торжественная регистрация брака
                 <div class="timeline-address">г. Гродно, ул. Соколовского, 24 (ЗАГС Октябрьского района)</div>
             </div>
         </div>
         <div class="timeline-item">
             <div class="timeline-time">16:45</div>
             <div class="timeline-event">
-                <strong>Фуршет и фотосессия</strong>
+                Фуршет и фотосессия
                 <div class="timeline-address">г. Гродно, ул. Кирова, 5 (Винный бар Эсперанто)</div>
             </div>
         </div>
         <div class="timeline-item">
             <div class="timeline-time">17:30</div>
-            <div class="timeline-event">
-                <strong>Праздничный банкет</strong>
-            </div>
+            <div class="timeline-event">Праздничный банкет</div>
         </div>
         <div class="timeline-item">
             <div class="timeline-time">00:00</div>
-            <div class="timeline-event">
-                <strong>Окончание праздничного дня</strong><br>
-                <span style="font-size: 0.85rem; color: #666;">Даже такой день может подойти к концу...</span>
-            </div>
+            <div class="timeline-event">Окончание праздничного дня.<br>Даже такой день может подойти к концу...</div>
         </div>
     </div>
 </section>
 
-<!-- Дресс-код -->
 <section class="dresscode-block fade-up">
     <div class="dresscode-container">
         <h2 class="dresscode-title">ДРЕСС-КОД</h2>
@@ -735,7 +719,6 @@
     </div>
 </section>
 
-<!-- ПОЖЕЛАНИЯ -->
 <section class="wishes-block fade-up">
     <div class="wishes-container">
         <h2 class="wishes-title">ПОЖЕЛАНИЯ</h2>
@@ -749,7 +732,7 @@
     </div>
 </section>
 
-<!-- Форма присутствия -->
+<!-- Форма присутствия (анкета) с новым вопросом про место присоединения -->
 <section class="presence-block fade-up">
     <div class="presence-container">
         <h2 class="presence-title">ПРИСУТСТВИЕ</h2>
@@ -769,6 +752,17 @@
                     <label><input type="radio" name="attendance" value="Возможно, сообщу позже"> Возможно, сообщу позже</label>
                 </div>
             </div>
+            
+            <!-- НОВЫЙ ВОПРОС: Откуда присоединитесь? (вертикально в столбик) -->
+            <div class="form-group">
+                <label>Откуда вы присоединитесь к нашему празднику?</label>
+                <div class="join-group">
+                    <label><input type="radio" name="join_point" value="Буду на церемонии регистрации в ЗАГСе и на торжестве"> Буду на церемонии регистрации в ЗАГСе и на торжестве</label>
+                    <label><input type="radio" name="join_point" value="Присоединюсь только к торжеству"> Присоединюсь только к торжеству</label>
+                    <label><input type="radio" name="join_point" value="Сообщу позже"> Сообщу позже</label>
+                </div>
+            </div>
+            
             <div class="form-group">
                 <label>Предпочтения по напиткам (можно выбрать несколько)</label>
                 <div class="checkbox-group">
@@ -790,7 +784,6 @@
     </div>
 </section>
 
-<!-- Контакты: жених и невеста -->
 <section class="contacts-block fade-up">
     <div class="contacts-container">
         <h2 class="contacts-title">КОНТАКТЫ</h2>
