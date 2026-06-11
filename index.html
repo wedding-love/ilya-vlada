@@ -72,10 +72,10 @@
             text-transform: uppercase;
         }
 
-        /* Увеличенный жирный шрифт для "ПРИГЛАШАЕМ НА НАШУ СВАДЬБУ" */
+        /* НЕ ЖИРНЫЙ — обычный шрифт для "ПРИГЛАШАЕМ НА НАШУ СВАДЬБУ" */
         .hero-sub {
             font-size: 1.2rem;
-            font-weight: 700;
+            font-weight: 400;
             letter-spacing: 0.2rem;
             text-transform: uppercase;
             margin-top: 0.2rem;
@@ -88,10 +88,10 @@
             margin-top: 1rem;
         }
 
-        /* Увеличенная жирная дата */
+        /* ДАТА НЕ ЖИРНАЯ */
         .hero-date {
             font-size: 1.6rem;
-            font-weight: 700;
+            font-weight: 400;
             letter-spacing: 0.1em;
             margin-top: 0.5rem;
         }
@@ -361,9 +361,8 @@
         .timeline-title {
             text-align: center;
             font-size: clamp(1.8rem, 5vw, 2.5rem);
-            font-weight: 700; /* Жирный шрифт для заголовка Тайминг */
+            font-weight: 500;
             margin-bottom: 2.5rem;
-            letter-spacing: 0.05em;
         }
         .timeline {
             max-width: 680px;
@@ -384,15 +383,16 @@
         }
         .timeline-time {
             font-size: 1.5rem;
-            font-weight: 700; /* Жирное время */
+            font-weight: 600;
             letter-spacing: 0.02em;
             width: 100px;
             color: #1a1a1a;
         }
+        /* ЖИРНЫЕ ЧЕРНЫЕ ЗАГОЛОВКИ СОБЫТИЙ В ТАЙМИНГЕ */
         .timeline-event {
             font-size: 1.05rem;
-            font-weight: 500;
-            color: #3a3a3a;
+            font-weight: 700;
+            color: #000000;
             text-align: right;
             flex: 1;
             line-height: 1.5;
@@ -628,8 +628,10 @@
 
 <section class="hero" id="hero-section">
     <div class="names">ИЛЬЯ & ВЛАДА</div>
+    <!-- НЕ ЖИРНЫЙ шрифт для приглашения -->
     <div class="hero-sub">ПРИГЛАШАЕМ НА НАШУ СВАДЬБУ</div>
     <div class="hero-place">ВИННЫЙ БАР ЭСПЕРАНТО</div>
+    <!-- НЕ ЖИРНАЯ дата -->
     <div class="hero-date">29.08.26</div>
     <div class="scroll-down" id="scrollArrow">
         <span>ЛИСТАЙТЕ ВНИЗ</span>
@@ -688,7 +690,7 @@
     </div>
 </section>
 
-<!-- Тайминг (жирные заголовки) -->
+<!-- Тайминг: все заголовки событий ЖИРНЫЕ ЧЕРНЫЕ -->
 <section class="timeline-block fade-up">
     <h2 class="timeline-title">ТАЙМИНГ</h2>
     <div class="timeline">
