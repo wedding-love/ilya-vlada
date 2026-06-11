@@ -385,7 +385,7 @@
             width: 100px;
             color: #1a1a1a;
         }
-        /* По умолчанию все события жирные черные */
+        /* Все события по умолчанию — жирные черные */
         .timeline-event {
             font-size: 1.05rem;
             font-weight: 700;
@@ -394,7 +394,7 @@
             flex: 1;
             line-height: 1.5;
         }
-        /* Специальный класс для обычного шрифта (финальная фраза) */
+        /* Стиль для обычного (не жирного) текста внутри события */
         .timeline-event-normal {
             font-weight: 400;
             color: #3a3a3a;
@@ -690,7 +690,7 @@
     </div>
 </section>
 
-<!-- Тайминг: все основные заголовки жирные, финальная фраза — обычным шрифтом -->
+<!-- Тайминг: "Окончание праздничного дня" жирный, "Даже такой день может подойти к концу..." обычный -->
 <section class="timeline-block fade-up">
     <h2 class="timeline-title">ТАЙМИНГ</h2>
     <div class="timeline">
@@ -714,9 +714,9 @@
         </div>
         <div class="timeline-item">
             <div class="timeline-time">00:00</div>
-            <!-- Финальная фраза — обычный шрифт (класс timeline-event-normal) -->
-            <div class="timeline-event timeline-event-normal">
-                Окончание праздничного дня.<br>Даже такой день может подойти к концу...
+            <div class="timeline-event">
+                Окончание праздничного дня.
+                <div class="timeline-event-normal">Даже такой день может подойти к концу...</div>
             </div>
         </div>
     </div>
