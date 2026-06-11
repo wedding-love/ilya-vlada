@@ -42,10 +42,9 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            padding-top: 30px; /* Поднято выше */
+            padding-top: 30px;
         }
 
-        /* Полностью убираем все оверлеи и подложки */
         .hero::before {
             display: none;
         }
@@ -64,7 +63,6 @@
             text-shadow: none;
         }
 
-        /* Имена остаются элегантными */
         .names {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(1.8rem, 6vw, 3.5rem);
@@ -74,9 +72,8 @@
             text-transform: uppercase;
         }
 
-        /* УВЕЛИЧЕННЫЙ ШРИФТ ДЛЯ "ПРИГЛАШАЕМ НА НАШУ СВАДЬБУ" */
         .hero-sub {
-            font-size: 1.2rem;      /* Был 0.7rem — значительно увеличили */
+            font-size: 1.2rem;
             font-weight: 600;
             letter-spacing: 0.2rem;
             text-transform: uppercase;
@@ -90,9 +87,8 @@
             margin-top: 1rem;
         }
 
-        /* УВЕЛИЧЕННАЯ ДАТА */
         .hero-date {
-            font-size: 1.6rem;      /* Был 1.1rem — сделали заметно крупнее */
+            font-size: 1.6rem;
             font-weight: 600;
             letter-spacing: 0.1em;
             margin-top: 0.5rem;
@@ -101,7 +97,7 @@
         @media (max-width: 768px) {
             .hero { padding-top: 20px; }
             .names { font-size: 2rem; }
-            .hero-sub { font-size: 1rem; letter-spacing: 0.18rem; }  /* Адаптивно */
+            .hero-sub { font-size: 1rem; letter-spacing: 0.18rem; }
             .hero-place { font-size: 0.8rem; margin-top: 0.8rem; }
             .hero-date { font-size: 1.4rem; }
         }
@@ -110,7 +106,6 @@
             .hero-date { font-size: 1.2rem; }
         }
 
-        /* Стрелка без фона и обводки */
         .scroll-down {
             position: absolute;
             bottom: 2rem;
@@ -152,7 +147,6 @@
             animation: bounceSoft 2s infinite ease-in-out;
         }
 
-        /* Общие разделители и прочие стили */
         .small-divider {
             width: 60px;
             height: 1px;
@@ -399,10 +393,18 @@
             flex: 1;
             line-height: 1.5;
         }
+        .timeline-address {
+            font-size: 0.85rem;
+            color: #666;
+            display: inline-block;
+            margin-top: 4px;
+            line-height: 1.4;
+        }
         @media (max-width: 640px) {
             .timeline-item { flex-direction: column; align-items: flex-start; gap: 0.3rem; padding: 1rem 0; }
             .timeline-time { width: auto; font-size: 1.3rem; }
             .timeline-event { text-align: left; font-size: 0.95rem; }
+            .timeline-address { font-size: 0.8rem; }
         }
         .dresscode-block {
             background: #ffffff;
@@ -621,10 +623,8 @@
 
 <section class="hero" id="hero-section">
     <div class="names">ИЛЬЯ & ВЛАДА</div>
-    <!-- Увеличенный шрифт для приглашения -->
     <div class="hero-sub">ПРИГЛАШАЕМ НА НАШУ СВАДЬБУ</div>
     <div class="hero-place">ВИННЫЙ БАР ЭСПЕРАНТО</div>
-    <!-- Увеличенная дата -->
     <div class="hero-date">29.08.26</div>
     <div class="scroll-down" id="scrollArrow">
         <span>ЛИСТАЙТЕ ВНИЗ</span>
@@ -683,17 +683,23 @@
     </div>
 </section>
 
-<!-- Тайминг -->
+<!-- Тайминг (добавлен полный адрес для фуршета) -->
 <section class="timeline-block fade-up">
     <h2 class="timeline-title">ТАЙМИНГ</h2>
     <div class="timeline">
         <div class="timeline-item">
             <div class="timeline-time">16:00</div>
-            <div class="timeline-event">Торжественная регистрация брака<br><span style="font-size:0.9rem; color:#666;">г. Гродно, ул. Соколовского, 24 (ЗАГС Октябрьского района)</span></div>
+            <div class="timeline-event">
+                Торжественная регистрация брака
+                <div class="timeline-address">г. Гродно, ул. Соколовского, 24 (ЗАГС Октябрьского района)</div>
+            </div>
         </div>
         <div class="timeline-item">
             <div class="timeline-time">16:45</div>
-            <div class="timeline-event">Фуршет и фотосессия<br><span style="font-size:0.9rem; color:#666;">Винный бар Эсперанто</span></div>
+            <div class="timeline-event">
+                Фуршет и фотосессия
+                <div class="timeline-address">г. Гродно, ул. Кирова, 5 (Винный бар Эсперанто)</div>
+            </div>
         </div>
         <div class="timeline-item">
             <div class="timeline-time">17:30</div>
