@@ -386,6 +386,7 @@
             width: 100px;
             color: #1a1a1a;
         }
+        /* ОСНОВНОЕ ИЗМЕНЕНИЕ: делаем название события жирным */
         .timeline-event {
             font-size: 1.05rem;
             color: #3a3a3a;
@@ -393,12 +394,17 @@
             flex: 1;
             line-height: 1.5;
         }
+        .timeline-event strong {
+            font-weight: 700;
+            color: #111111;
+        }
         .timeline-address {
             font-size: 0.85rem;
             color: #666;
             display: inline-block;
             margin-top: 4px;
             line-height: 1.4;
+            font-weight: normal;
         }
         @media (max-width: 640px) {
             .timeline-item { flex-direction: column; align-items: flex-start; gap: 0.3rem; padding: 1rem 0; }
@@ -683,31 +689,36 @@
     </div>
 </section>
 
-<!-- Тайминг (добавлен полный адрес для фуршета) -->
+<!-- Тайминг (все названия событий — жирным шрифтом) -->
 <section class="timeline-block fade-up">
     <h2 class="timeline-title">ТАЙМИНГ</h2>
     <div class="timeline">
         <div class="timeline-item">
             <div class="timeline-time">16:00</div>
             <div class="timeline-event">
-                Торжественная регистрация брака
+                <strong>Торжественная регистрация брака</strong>
                 <div class="timeline-address">г. Гродно, ул. Соколовского, 24 (ЗАГС Октябрьского района)</div>
             </div>
         </div>
         <div class="timeline-item">
             <div class="timeline-time">16:45</div>
             <div class="timeline-event">
-                Фуршет и фотосессия
+                <strong>Фуршет и фотосессия</strong>
                 <div class="timeline-address">г. Гродно, ул. Кирова, 5 (Винный бар Эсперанто)</div>
             </div>
         </div>
         <div class="timeline-item">
             <div class="timeline-time">17:30</div>
-            <div class="timeline-event">Праздничный банкет</div>
+            <div class="timeline-event">
+                <strong>Праздничный банкет</strong>
+            </div>
         </div>
         <div class="timeline-item">
             <div class="timeline-time">00:00</div>
-            <div class="timeline-event">Окончание праздничного дня.<br>Даже такой день может подойти к концу...</div>
+            <div class="timeline-event">
+                <strong>Окончание праздничного дня</strong><br>
+                <span style="font-size: 0.85rem; color: #666;">Даже такой день может подойти к концу...</span>
+            </div>
         </div>
     </div>
 </section>
