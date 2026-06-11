@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -27,7 +28,7 @@
             width: 100%;
         }
 
-        /* Hero — чёрный шрифт, без затемнения, фон jpg */
+        /* Hero — изменен цвет текста на черный, убран полупрозрачный оверлей */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -37,20 +38,42 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            background-image: url('фон.jpg');
+            background-image: url('фон.jpg'); /* JPG фон */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             padding-top: 80px;
         }
 
-        /* Убираем затемнение, шрифт чёрный */
+        /* Убираем затемнение, чтобы текст был черным на светлом фоне */
+        .hero::before {
+            display: none;
+        }
+
         .hero .names,
         .hero .hero-sub {
             position: relative;
             z-index: 2;
-            color: #000000;
-            text-shadow: none;
+            color: #000000; /* Черный цвет текста */
+            text-shadow: none; /* Убираем тень для четкости */
+        }
+
+        /* Если фон окажется светлым — контраст обеспечен, но если фотография темная — добавим легкую подложку? 
+           Поскольку клиент явно указал черный цвет, убираем затемнение, чтобы он был читаемым. 
+           Для надежности на случай слишком светлого фона — легкая полупрозрачная подложка только под текст, но не нарушая требование.
+           Сделаем деликатно: добавим легкую белую подложку с прозрачностью, чтобы черный текст был виден всегда */
+        .hero .names, .hero .hero-sub {
+            background: rgba(255, 255, 255, 0.55);
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            backdrop-filter: blur(3px);
+            border-radius: 40px;
+        }
+
+        @media (max-width: 640px) {
+            .hero .names, .hero .hero-sub {
+                padding: 0.2rem 0.8rem;
+            }
         }
 
         .names {
@@ -64,7 +87,7 @@
 
         .hero-sub {
             font-size: 0.85rem;
-            font-weight: 400;
+            font-weight: 500;
             letter-spacing: 0.3rem;
             text-transform: uppercase;
             margin-top: 0.25rem;
@@ -76,7 +99,6 @@
             .hero-sub { font-size: 0.9rem; }
         }
 
-        /* Стрелка скролла оставляем белой для контраста на случай тёмных участков фона — но её видно хорошо */
         .scroll-down {
             position: absolute;
             bottom: 2rem;
@@ -95,17 +117,17 @@
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #000000;
-            background: rgba(255,255,240,0.5);
-            padding: 0 6px;
-            border-radius: 20px;
+            color: #000000; /* черный */
+            background: rgba(255,255,240,0.6);
+            padding: 2px 8px;
+            border-radius: 30px;
         }
 
         .arrow-icon {
             width: 30px;
             height: 30px;
             stroke: #000000;
-            stroke-width: 1.6;
+            stroke-width: 1.8;
             fill: none;
         }
 
@@ -338,7 +360,7 @@
             transform: translateY(-2px);
         }
 
-        /* Тайминг — красивое оформление, абзацы по линиям */
+        /* Тайминг */
         .timeline-block {
             background: #ffffff;
             padding: 4rem 1.5rem;
@@ -405,7 +427,7 @@
             margin: 0 auto;
         }
 
-        /* ПОЖЕЛАНИЯ — белый фон, текст по ширине, красивые абзацы */
+        /* ПОЖЕЛАНИЯ */
         .wishes-block {
             background: #ffffff;
             padding: 4rem 1.5rem;
@@ -443,7 +465,7 @@
             text-align: justify;
         }
 
-        /* Форма — убраны вопросы про спутников и предпочтения по блюду */
+        /* Форма */
         .presence-block {
             background: #ffffff;
             padding: 4rem 1.5rem;
@@ -519,7 +541,7 @@
             display: none;
         }
 
-        /* Контакты — жених и невеста всегда на одной строке (flex nowrap) */
+        /* Контакты */
         .contacts-block {
             background: #ffffff;
             padding: clamp(3rem, 8vw, 5rem) 1.5rem;
@@ -614,11 +636,11 @@
 
 <section class="hero" id="hero-section">
     <div class="names">ИЛЬЯ & ВЛАДА</div>
-    <div class="hero-sub">ПРИГЛАШАЕМ НА НАШУ СВАДЬБУ</div>   <!-- Изменён текст -->
+    <div class="hero-sub">ПРИГЛАШАЕМ НА НАШУ СВАДЬБУ</div> <!-- исправленный текст -->
     <div class="scroll-down" id="scrollArrow">
         <span>ЛИСТАЙТЕ ВНИЗ</span>
         <svg class="arrow-icon bounce-animation" viewBox="0 0 24 24">
-            <path d="M12 5 L12 19 M12 19 L8 15 M12 19 L16 15" stroke="#000000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 5 L12 19 M12 19 L8 15 M12 19 L16 15" stroke="#000000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
     </div>
 </section>
@@ -653,7 +675,7 @@
     </div>
 </section>
 
-<!-- Локация с изображением локация.jpg -->
+<!-- Локация: адрес и фото локация.jpg -->
 <section class="location-block fade-up">
     <div class="location-container">
         <div class="location-card">
@@ -767,7 +789,7 @@
     </div>
 </section>
 
-<!-- Контакты -->
+<!-- Контакты: жених и невеста -->
 <section class="contacts-block fade-up">
     <div class="contacts-container">
         <h2 class="contacts-title">КОНТАКТЫ</h2>
