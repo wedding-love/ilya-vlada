@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -51,18 +50,20 @@
         }
 
         .hero .names,
-        .hero .hero-sub {
+        .hero .hero-sub,
+        .hero .hero-date,
+        .hero .hero-place {
             position: relative;
             z-index: 2;
             color: #000000; /* Черный цвет текста */
             text-shadow: none; /* Убираем тень для четкости */
         }
 
-        /* Если фон окажется светлым — контраст обеспечен, но если фотография темная — добавим легкую подложку? 
-           Поскольку клиент явно указал черный цвет, убираем затемнение, чтобы он был читаемым. 
-           Для надежности на случай слишком светлого фона — легкая полупрозрачная подложка только под текст, но не нарушая требование.
-           Сделаем деликатно: добавим легкую белую подложку с прозрачностью, чтобы черный текст был виден всегда */
-        .hero .names, .hero .hero-sub {
+        /* Для читаемости на любом фоне — легкая полупрозрачная подложка под текстом */
+        .hero .names, 
+        .hero .hero-sub,
+        .hero .hero-date,
+        .hero .hero-place {
             background: rgba(255, 255, 255, 0.55);
             display: inline-block;
             padding: 0.2rem 1rem;
@@ -71,7 +72,10 @@
         }
 
         @media (max-width: 640px) {
-            .hero .names, .hero .hero-sub {
+            .hero .names, 
+            .hero .hero-sub,
+            .hero .hero-date,
+            .hero .hero-place {
                 padding: 0.2rem 0.8rem;
             }
         }
@@ -93,10 +97,26 @@
             margin-top: 0.25rem;
         }
 
+        .hero-date {
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            margin-top: 0.8rem;
+        }
+
+        .hero-place {
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            margin-top: 0.4rem;
+        }
+
         @media (max-width: 768px) {
             .hero { padding-top: 60px; }
             .names { font-size: 2.2rem; padding: 0 20px; }
             .hero-sub { font-size: 0.9rem; }
+            .hero-date { font-size: 1.2rem; }
+            .hero-place { font-size: 0.9rem; }
         }
 
         .scroll-down {
@@ -636,7 +656,9 @@
 
 <section class="hero" id="hero-section">
     <div class="names">ИЛЬЯ & ВЛАДА</div>
-    <div class="hero-sub">ПРИГЛАШАЕМ НА НАШУ СВАДЬБУ</div> <!-- исправленный текст -->
+    <div class="hero-sub">ПРИГЛАШАЕМ НА НАШУ СВАДЬБУ</div>
+    <div class="hero-date">29.08.26</div>
+    <div class="hero-place">ВИННЫЙ БАР ЭСПЕРАНТО</div>
     <div class="scroll-down" id="scrollArrow">
         <span>ЛИСТАЙТЕ ВНИЗ</span>
         <svg class="arrow-icon bounce-animation" viewBox="0 0 24 24">
